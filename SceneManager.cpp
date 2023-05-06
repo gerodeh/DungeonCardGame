@@ -1,13 +1,13 @@
 #include "SceneManager.h"
-#include "HeroChoose.h"
-#include "MainMenu.h"
-#include "Gui.h"
+
 
 SceneManager::SceneManager()
 {
     current_scene = SceneManager::Scenes::MAIN_MENU;
     scenesArr[0] = new MainMenu();
     scenesArr[1] = new HeroChoose();
+    scenesArr[2] = new DifficultyChoose();
+    scenesArr[3] = new Map();
 }
 SceneManager::~SceneManager()
 {

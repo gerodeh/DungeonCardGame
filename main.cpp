@@ -4,25 +4,25 @@
 #include "HeroChoose.h"
 #include <vector>
 #include "SceneManager.h"
+#include "MainGame.h"
+
 using namespace sf;
 
-//////////////////////////////////////////////////
-//scene[0] = Main menu   // Scenes::MAINMENU    //
-//scene[1] = Hero choose // Scenes::HEROCHOOSE  //
-//scene[2] = Map         // Scenes::MAP         //
-//scene[3] = Battle      // Scenes::BATTLE      //
-///////////////////////////                     //
-//                                              //
-//                                              //
-//////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//scene[0] = Main menu   // Scenes::MAINMENU            //
+//scene[1] = Hero choose // Scenes::HEROCHOOSE          //
+//scene[2] = Difficulty  // Scenes::DIFFICULTYCHOOSE    //
+//scene[3] = Map         // Scenes::MAP                 //
+//scene[4] = Battle      // Scenes::BATTLE              //
+///////////////////////////                             //
+// VideoMode(1300, 800)                                 //
+//////////////////////////////////////////////////////////
 
 int main()
 {
-    RenderWindow app(sf::VideoMode(1300, 800), "DCG", Style::Default);
+    RenderWindow app(sf::VideoMode(1300, 800), "DCG", Style::Close);
     SceneManager scenemanager;
-
-
-    int current_scene = 0;
+    gameprocess::MainGame game;
 
     while (app.isOpen())
     {
@@ -55,11 +55,55 @@ int main()
                                 app.close();
                             }
                     break;
+                ///////////////////////////////////////////////////// BORDER
                 case SceneManager::Scenes::HERO_CHOOSE:
+                    if (event.type == Event::MouseButtonPressed)
+                        if (event.key.code == Mouse::Left)
+                            if ((*scenemanager.GetScene(SceneManager::Scenes::HERO_CHOOSE)).GetRectShape(HeroChoose::ButtonName::MAINMENU).getGlobalBounds().contains(mousePoz.x, mousePoz.y))
+                            {
+                                std::cout << "Return to main menu Button Has Been Pressed" << std::endl;
+                                scenemanager.SetScene(SceneManager::Scenes::MAIN_MENU);
+                            }
+                    if (event.type == Event::MouseButtonPressed)
+                        if (event.key.code == Mouse::Left)
+                            if ((*scenemanager.GetScene(SceneManager::Scenes::HERO_CHOOSE)).GetRectShape(HeroChoose::ButtonName::WARRIOR).getGlobalBounds().contains(mousePoz.x, mousePoz.y))
+                            {
+                                std::cout << "Warrior selection Button Has Been Pressed" << std::endl;
+                                game.GetPlayer().SetPlayerClass(gameprocess::Player::PlayerClasses::Warrior);
+                                scenemanager.SetScene(SceneManager::Scenes::DIFFICULTY_CHOOSE);
+                            }
+                    break;
+                ///////////////////////////////////////////////////// BORDER
+                case SceneManager::Scenes::DIFFICULTY_CHOOSE:
+                    if (event.type == Event::MouseButtonPressed)
+                        if (event.key.code == Mouse::Left)
+                            if ((*scenemanager.GetScene(SceneManager::Scenes::DIFFICULTY_CHOOSE)).GetRectShape(DifficultyChoose::ButtonName::HEROCHOOSERETURN).getGlobalBounds().contains(mousePoz.x, mousePoz.y))
+                            {
+                                std::cout << "Return to hero selection Button Has Been Pressed" << std::endl;
+                                scenemanager.SetScene(SceneManager::Scenes::HERO_CHOOSE);
+                            }
+                    if (event.type == Event::MouseButtonPressed)
+                        if (event.key.code == Mouse::Left)
+                            if ((*scenemanager.GetScene(SceneManager::Scenes::DIFFICULTY_CHOOSE)).GetRectShape(DifficultyChoose::ButtonName::NORMAL).getGlobalBounds().contains(mousePoz.x, mousePoz.y))
+                            {
+                                std::cout << "Difficulty Normal Button Has Been Pressed" << std::endl;
+                                game.SetGameDifficulty(gameprocess::MainGame::Difficulties::Normal);
+                                scenemanager.SetScene(SceneManager::Scenes::MAP);
+                            }
+                    break;
+                case SceneManager::Scenes::MAP:
+                    if (event.type == Event::MouseButtonPressed)
+                        if (event.key.code == Mouse::Left)
+                            if ((*scenemanager.GetScene(SceneManager::Scenes::MAP)).GetRectShape(Map::ButtonName::MAINMENU).getGlobalBounds().contains(mousePoz.x, mousePoz.y))
+                            {
+                                std::cout << "Return to main menu Button Has Been Pressed" << std::endl;
+                                scenemanager.SetScene(SceneManager::Scenes::MAIN_MENU);
+                            }
                     break;
             }
 
         }
+
 
         app.clear(Color(0, 128, 255));
 

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1682844886 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\gui.cpp
+1682935704 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\gui.cpp
 	"Gui.h"
 	<SFML/Graphics.hpp>
 
@@ -417,46 +417,93 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1682934987 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\mainmenu.cpp
+1682935704 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\mainmenu.cpp
 	"MainMenu.h"
 	<SFML/Graphics.hpp>
 	<iostream>
 	<vector>
 
-1682935704 d:\codeblocksprojects\educationalexperience\dungeoncardgame\mainmenu.h
+1682937332 d:\codeblocksprojects\educationalexperience\dungeoncardgame\mainmenu.h
 	<SFML/Graphics.hpp>
 	"Gui.h"
 
-1682924407 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\scenemanager.cpp
+1683371899 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\scenemanager.cpp
 	"SceneManager.h"
-	"HeroChoose.h"
-	"MainMenu.h"
-	"Gui.h"
 
-1682924524 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\main.cpp
+1683372007 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\main.cpp
 	<SFML/Graphics.hpp>
 	"Gui.h"
 	"MainMenu.h"
 	"HeroChoose.h"
 	<vector>
 	"SceneManager.h"
+	"MainGame.h"
 
-1682923644 d:\codeblocksprojects\educationalexperience\dungeoncardgame\scenemanager.h
+1683371886 d:\codeblocksprojects\educationalexperience\dungeoncardgame\scenemanager.h
 	"Gui.h"
 	"MainMenu.h"
 	"HeroChoose.h"
+	"DifficultyChoose.h"
 	<SFML/Graphics.hpp>
+	"Map.h"
 
-1682935704 d:\codeblocksprojects\educationalexperience\dungeoncardgame\herochoose.h
+1683358227 d:\codeblocksprojects\educationalexperience\dungeoncardgame\herochoose.h
 	"Gui.h"
 	<SFML/Graphics.hpp>
+	"Button.h"
 
-1682931015 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\herochoose.cpp
+1683358087 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\herochoose.cpp
 	"HeroChoose.h"
 	<SFML/Graphics.hpp>
 	<iostream>
 	<vector>
+	"Button.h"
 
 1682844553 d:\codeblocksprojects\educationalexperience\dungeoncardgame\font.h
 	<SFML/Graphics.hpp>
+
+1683375253 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\button.cpp
+	"Button.h"
+	"iostream"
+	"SFML/Graphics.hpp"
+
+1683375202 d:\codeblocksprojects\educationalexperience\dungeoncardgame\button.h
+	"SFML/Graphics.hpp"
+
+1683372938 d:\codeblocksprojects\educationalexperience\dungeoncardgame\difficultychoose.h
+	"SFML/Graphics.hpp"
+	"Gui.h"
+	"Button.h"
+
+1683373096 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\difficultychoose.cpp
+	"DifficultyChoose.h"
+	<SFML/Graphics.hpp>
+
+1683368043 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\game.cpp
+	"Game.h"
+	"Player.h"
+
+1683369372 d:\codeblocksprojects\educationalexperience\dungeoncardgame\game.h
+	<SFML/Graphics.hpp>
+	"Player.h"
+	<iostream>
+
+1683371072 d:\codeblocksprojects\educationalexperience\dungeoncardgame\player.h
+
+1683371120 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\player.cpp
+	"Player.h"
+
+1683371204 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\maingame.cpp
+	"MainGame.h"
+
+1683371173 d:\codeblocksprojects\educationalexperience\dungeoncardgame\maingame.h
+	"Player.h"
+
+1683375277 d:\codeblocksprojects\educationalexperience\dungeoncardgame\map.h
+	"Gui.h"
+	<SFML/Graphics.hpp>
+	"Button.h"
+
+1683375099 source:d:\codeblocksprojects\educationalexperience\dungeoncardgame\map.cpp
+	"Map.h"
 

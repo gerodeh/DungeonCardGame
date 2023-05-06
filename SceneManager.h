@@ -3,9 +3,11 @@
 #include "Gui.h"
 #include "MainMenu.h"
 #include "HeroChoose.h"
+#include "DifficultyChoose.h"
 #include <SFML/Graphics.hpp>
+#include "Map.h"
 
-#define sceneArrSize 2
+#define sceneArrSize 4
 
 class SceneManager
 {
@@ -15,6 +17,7 @@ public:
     {
         MAIN_MENU,
         HERO_CHOOSE,
+        DIFFICULTY_CHOOSE,
         MAP,
         BATTLE,
         SHOP

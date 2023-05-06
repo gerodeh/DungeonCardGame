@@ -48,12 +48,22 @@
 			<Add library="dxguid" />
 			<Add directory="D:/CodeBlocks/SFML-2.5.1/lib" />
 		</Linker>
+		<Unit filename="Button.cpp" />
+		<Unit filename="Button.h" />
+		<Unit filename="DifficultyChoose.cpp" />
+		<Unit filename="DifficultyChoose.h" />
 		<Unit filename="Gui.cpp" />
 		<Unit filename="Gui.h" />
 		<Unit filename="HeroChoose.cpp" />
 		<Unit filename="HeroChoose.h" />
+		<Unit filename="MainGame.cpp" />
+		<Unit filename="MainGame.h" />
 		<Unit filename="MainMenu.cpp" />
 		<Unit filename="MainMenu.h" />
+		<Unit filename="Map.cpp" />
+		<Unit filename="Map.h" />
+		<Unit filename="Player.cpp" />
+		<Unit filename="Player.h" />
 		<Unit filename="SceneManager.cpp" />
 		<Unit filename="SceneManager.h" />
 		<Unit filename="cb.bmp" />

@@ -2,30 +2,36 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
+#include "Button.h"
+using namespace sf;
 
 HeroChoose::HeroChoose()
 {
     if (!fonts[0].loadFromFile("Fonts/sfns-display-bold.ttf")){std::cout << "Failed to load font" << std::endl;}
+    if (!textures[0].loadFromFile("Images/warrior.jpg")){std::cout << "Failed to load image" << std::endl;}
+    sprites[0].setTexture(textures[0]);
+    sprites[0].setScale(Vector2f(0.3, 0.3));
+    sprites[0].setPosition(Vector2f(537, 40));
 
-    rectShapes[0].setSize(Vector2f(100, 50));
-    rectShapes[0].setFillColor(sf::Color::Green);
-    rectShapes[0].setPosition(Vector2f(585, 446));
-
-    texts[0].setFont(fonts[0]);
-    texts[0].setString("Return to main menu");
-    texts[0].setCharacterSize(35);
-    texts[0].setPosition(480, 100);
 }
 HeroChoose::~HeroChoose(){}
+
+HeroChoose::HeroChoose(const sf::RenderWindow &app)
+{
+
+}
 
 
 void HeroChoose::DrawGUI(sf::RenderWindow& app)
 {
-    app.draw(rectShapes[0]);
-    app.draw(texts[0]);
+    app.draw(buttons[0].getButtonRect());
+    app.draw(buttons[0].getButtonText());
+    app.draw(buttons[1].getButtonRect());
+    app.draw(buttons[1].getButtonText());
+    app.draw(sprites[0]);
 }
 
 sf::RectangleShape HeroChoose::GetRectShape(int id)
 {
-    return rectShapes[id];
+    return buttons[id].getButtonRect();
 }

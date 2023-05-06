@@ -20,7 +20,7 @@ public:
     {
         START,
         EXIT,
-        ABOUT
+        SETTINGS
     };
 
 
